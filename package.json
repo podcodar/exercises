@@ -1,0 +1,38 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "description": "Exercícios da PodCodar",
+  "main": "README.md",
+  "scripts": {
+    "test": "jest $INIT_CWD/test.ts",
+    "test:watch": "npm test -- --watch $INIT_CWD/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/podcodar/exercises.git"
+  },
+  "keywords": [
+    "programming",
+    "exercises",
+    "podcodar"
+  ],
+  "author": "Marco Antônio",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/podcodar/exercises/issues"
+  },
+  "homepage": "https://github.com/podcodar/exercises#readme",
+  "dependencies": {
+    "@testing-library/dom": "^7.24.3",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@types/jest": "^26.0.14",
+    "@types/jsdom": "^16.2.4",
+    "jest": "^26.4.2",
+    "jsdom": "^16.4.0",
+    "typescript": "^4.0.3",
+    "ts-jest": "^26.4.1"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  }
+}
