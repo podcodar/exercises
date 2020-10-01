@@ -18,4 +18,6 @@ Para resolver esse exercício você precisará entender sobre:
 
 Para testar, você precisa de ter `node` e `npm` no seu computador e fazer o [setup desse projeto](https://github.com/podcodar/exercises/tree/fea/add-001#Setup).
 
-Após isso, acesse a pasta do exercício e isso instale as dependências do projeto com `npm install`
+Após isso acesse a pasta do exercício e rode o comando `npm test`.
+
+Isso irá conferir se sua resposta está atendendo os requisitos esperados.
