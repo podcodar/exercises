@@ -30,6 +30,6 @@ Em caso de dúvidas em um exercício específico temos um canal aberto no **Disc
 - [Para se inscrever no canal](https://discord.gg/VMUcbkhGbE)
 - [Para tirar dúvidas](https://discord.com/channels/694536762038550549/771788063936348161) com outros desenvolvedores da **PodCodar**.
 
-## Como Contribuir
+## PodContribuir
 
 Visite a doc do [Contributing](./CONTRIBUTING.md) e as [issues](https://github.com/podcodar/exercises/issues) deste repositório para ver como contribuir com novos exercícios!
