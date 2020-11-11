@@ -1,18 +1,18 @@
 import palindromo from "./main";
 
-describe("Tests - Palindromo", () => {
+describe("Testes - Palindromo", () => {
   const complexString = "socorram me subi no onibus em marrocos";
   const revertedComplexString = "socorram me subino on ibus em marrocos";
 
-  it(`should return false for invalid payload `, () => {
+  it(`deve retornar false para casos invalidos `, () => {
     expect(palindromo("abc", "abc")).toBe(false);
   });
 
-  it(`should return true for valid palindrom `, () => {
+  it(`deve retornar true para casos validos de palindromo `, () => {
     expect(palindromo("ovo", "ovo")).toBe(true);
   });
 
-  it(`should return true for valid palindrom with spaces `, () => {
+  it(`deve retornar true para casos validos de  palindromo com espaços `, () => {
     expect(palindromo(complexString, revertedComplexString)).toBe(true);
   });
 });

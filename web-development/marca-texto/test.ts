@@ -13,7 +13,7 @@ const { window } = new JSDOM(html, {
 });
 const { document } = window;
 
-describe("Tests - Marca Texto", () => {
+describe("Testes - Marca Texto", () => {
   beforeAll(
     () => new Promise((resolve) => window.addEventListener("load", resolve))
   );
