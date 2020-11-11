@@ -1,6 +1,6 @@
 import fib from "./main";
 
-describe("programming-basics[001]", () => {
+describe("Tests - Fibonacci", () => {
   it(`should calculate fibonacci of 0`, () => {
     expect(fib(1)).toBe(1);
   });
