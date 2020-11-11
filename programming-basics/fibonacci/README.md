@@ -1,6 +1,6 @@
 # Fibonacci
 
-Para esse primeiro exercício iremos calcular os valores da sequência de **Fibonacci**.
+Neste exercício iremos calcular os valores da sequência de **Fibonacci**.
 
 Na matemática, a Sucessão de Fibonacci (ou Sequência de Fibonacci), é uma sequência de números inteiros, começando normalmente por 0 e 1, na qual, cada termo subsequente corresponde à soma dos dois anteriores.
 
