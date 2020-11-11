@@ -13,7 +13,7 @@ const { window } = new JSDOM(html, {
 });
 const { document } = window;
 
-describe("Tests - Primeira Pagina", () => {
+describe("Testes - Primeira Pagina", () => {
   beforeAll(
     () => new Promise((resolve) => window.addEventListener("load", resolve))
   );

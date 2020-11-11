@@ -1,6 +1,6 @@
 import palindromo from "./main";
 
-describe("Tests - Palindromo", () => {
+describe("Testes - Palindromo", () => {
   const complexString = "socorram me subi no onibus em marrocos";
 
   it(`deve retornar false para casos invalidos `, () => {

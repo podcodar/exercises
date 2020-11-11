@@ -1,10 +1,10 @@
 import verificaAlfabeto from "./main";
 
-describe("Tests - Alfabeto", () => {
+describe("Testes - Alfabeto", () => {
   const completeAlphabet = "abcdefghijklmnopqrstuvwxyz";
   const longTest = "teste invalido pois nao contem todas as letras do alfabeto";
 
-  it(`should return false for invalid payload with less than 26 letters`, () => {
+  it(`deve retornar false para palavras com menos de 26 letras`, () => {
     expect(verificaAlfabeto("kkk")).toBe(false);
   });
 
@@ -12,11 +12,15 @@ describe("Tests - Alfabeto", () => {
     expect(longTest).toBe(false);
   });
 
-  it(`should return false for invalid payload missing 1 letter`, () => {
+  it(`deve retornar false para uma palavra com todas letras do alfabeto menos a ultima`, () => {
     expect(verificaAlfabeto(completeAlphabet.slice(0, 24))).toBe(false);
   });
 
-  it(`should return true for valid payload`, () => {
+  it(`deve retornar true para palavras com todas as 26 letras do alfabeto`, () => {
     expect(verificaAlfabeto(completeAlphabet)).toBe(true);
+  });
+
+  it(`deve retornar true para palavras com mais de 26 letras contendo todas do alfabeto`, () => {
+    expect(verificaAlfabeto(completeAlphabet + "abcdefgkkkk")).toBe(true);
   });
 });
