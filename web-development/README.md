@@ -24,3 +24,5 @@ Para rodar os testes de um exercício você precisa:
 
 - acessar a pasta do exercício
 - rodar `npm test` dentro da pasta
+
+Voce pode utilizar também o comando `npm test:all` nesta pasta (`exercicios/web-development/`), isto vai executar todos os testes de todos os exercícios desta lista!

@@ -6,13 +6,3 @@ Logo você deverá implementar a função `verificaAlfabeto`, que vai ter como e
 
 - `true` quando a `string` conter os 26 caracteres do alfabeto
 - `false` quando a `string` não conter os 26 caracteres do alfabeto
-
-## Requisitos
-
-Instalar as dependências do `programming-basics`, siga o tutorial [aqui](../README.md)
-
-## Testando
-
-Após isso acesse a pasta deste exercício e rode o comando `npm test`.
-
-Isso irá conferir se sua resposta está atendendo os requisitos esperados.

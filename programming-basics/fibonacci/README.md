@@ -24,15 +24,3 @@ fib(10) === 55
 ```
 
 Logo a entrada do problema será um **número inteiro** e a saída também será **um número inteiro**.
-
-## Requisitos
-
-Instalar as dependências do `programming-basics`, siga o tutorial [aqui](../README.md)
-
-## Testando
-
-Após isso acesse a pasta deste exercício e rode o comando `npm test`.
-
-Isso irá conferir se sua resposta está atendendo os requisitos esperados.
-
-![Fibonacci result](../../images/fibonacci.png)
