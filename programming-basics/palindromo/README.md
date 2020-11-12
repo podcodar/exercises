@@ -13,14 +13,3 @@ Vamos exemplificar usando alguns casos de entrada
 palindromo('ovo') === true
 palindromo('nao e palindromo') === false
 ```
-
-## Requisitos
-
-Instalar as dependências do `programming-basics`, siga o tutorial [aqui](../README.md)
-
-## Testando
-
-Após isso acesse a pasta deste exercício e rode o comando `npm test`.
-Isso irá conferir se sua resposta está atendendo os requisitos esperados.
-
-![Palindromo result](../../images/palindromo.png)

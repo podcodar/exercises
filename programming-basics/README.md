@@ -44,3 +44,5 @@ Para rodar os testes de um exercício você precisa:
 
 - acessar a pasta do exercício (por exemplo `exercicios/programming-basics/fibonacci`)
 - rodar `npm test` dentro da pasta
+
+Voce pode utilizar também o comando `npm test:all` nesta pasta (`exercicios/programming-basics/`), isto vai executar todos os testes de todos os exercícios desta lista!
