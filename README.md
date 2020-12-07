@@ -23,7 +23,46 @@ para cada trilha vão haver exercícios propostos + exercícios recomendados.
 
 Primeiro você deve fazer um **fork** desse repositório na sua conta pessoal. Cada lista de exercícios tem sua prórpia doc que descreve como fazer e validar seus exercícios relacionados.
 
-Assim você pode fazer os exercícios e salvá-los no seu github, isto facilita para que outros desenvolvedores consigam tirar dúvidas e discutir seus exercícios com você, lembre-se de manter seu repositório pessoal organizado e atualizado!
+![Criar um fork](./docs/images/exemplo_fork_1.png)
+
+O **Fork** é uma forma de criar uma cópia do repositório **podcodar/exercises** para sua conta Github pessoal, isto facilita para que outros desenvolvedores consigam tirar dúvidas e discutir seus exercícios com você além de manter seu código pessoal organizado. Lembre-se de manter seu repositório pessoal sempre atualizado!
+
+### Rotina para usar o exercises
+
+Com o passar do tempo o repositório **podcodar/exercises** será atualizado por colaboradores, isto quer dizer que novos exercicios, documentações, tutoriais e projetos serão adicionados, gerando mais conteúdo para seus estudos.
+
+Para se manter atualizado é necessário atualizar o seu repositório pessoal com as novas inclusões feitas no repositório original da PodCodar. É possível fazer isto utilizando a interface do Github:octocat:!
+
+Quando existirem novas modificações você verá a seguinte mensagem na pagina inicial do seu repositório:
+
+![Criar Pull Request de Atualização](./docs/images/exemplo_fork_2.png)
+
+Clique no botão com a mensagem **Pull Request**, isto te levará a página de criação de pull requests, isto permitirá que você crie um novo pedido de alterações que terá todas as últimas atualizações feitas pela **PodCodar**
+
+![Configurar Pull Request](./docs/images/exemplo_fork_3.png)
+
+Nesta tela siga os 4 passos:
+
+1. Selecione **podcodar/exercises** como *base repository* e **master** como *base*
+2. Após o passo 1 sua tela irá recarregar e você deverá cliclar em **compare across forks**  antes de ir para o passo 3.
+3. Selecione **podcodar/exercises** em *head repository* e **master** como *base*
+4. Clique em **Create pull request**
+
+Você será redirecionado para a página de criação, ela demonstra quais alterações serão inseridas no seu código
+
+![Abrir Pull Request](./docs/images/abrir_pr.png)
+
+Por padrão colo Sync no título e o texto `Sincroniza com PodCodar` na mensagem, após isto clique em **Create pull request**.
+
+Por fim, se tudo estiver certo o Github irá demonstrar a seguinte tela
+
+![Merge](./docs/images/merge_pr.png)
+
+Ela lista as alterações feitas  e serve como uma documentação das modificações inseridas. Caso não existam *conflitos*(se ocorrer procure alguem da PodCodar para te auxiliar) clique em **Merge pull request**.
+
+Presto :raised_hands: ! Você pode continuar desenvolvendo normalmente, o seu repositório foi atualizado!
+
+---
 
 Em caso de dúvidas em um exercício específico temos um canal aberto no **Discord**, acesse:
 
