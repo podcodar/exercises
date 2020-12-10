@@ -25,15 +25,11 @@ Para que você consiga executar os testes sobre a sua resolução.
 
 ## Setup
 
-Com o **fork** já [clonado](https://github.com/git-guides/git-clone) em seu computador é hora de fazer o setup inicial desta lista para que seja possível executar tanto suas resoluções quanto seus testes.
-
-Para isto primeiro é necessário instalar alguns [pacotes NPM](https://www.npmjs.com/search?q=keywords:packages). Abra um terminal e por ele acesse esta a pasta que contém a lista de exercícios **programming-basics**.
-
-Agora no terminal digite:
+Primeiro você deve instalar as dependências desta lista de exercícios **Programming Basics**, para isto:
 
 ```sh
-# Na pasta ./programming-basics
-npm install
+# Na pasta path_to/exercises/programming-basics
+npm i
 ```
 
 ...Presto! 😁
@@ -42,7 +38,12 @@ npm install
 
 Para rodar os testes de um exercício você precisa:
 
-- acessar a pasta do exercício (por exemplo `exercicios/programming-basics/fibonacci`)
-- rodar `npm test` dentro da pasta
+- **Sistemas Linux**
+    - acessar a pasta do exercício
+    - rodar `npm run test:lin` dentro da pasta do exercício
 
-Voce pode utilizar também o comando `npm test:all` nesta pasta (`exercicios/programming-basics/`), isto vai executar todos os testes de todos os exercícios desta lista!
+-  **Sistemas Windows PowerShell**
+    - acessar a pasta do exercício
+    - rodar `npm run test:win -- $pwd/tests.js` dentro da pasta do exercício
+
+Voce pode utilizar também o comando `npm test:all` nesta pasta (`exercises/programming-basics/`), isto vai executar todos os testes de todos os exercícios desta lista!
