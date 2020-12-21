@@ -5,17 +5,15 @@ const dreamList = [
   'Mozão',
 ];
 
-const randomDream = (dreams, callback) =>
-callback(dreams[Math.floor(Math.random() * dreams.length)]);
+const randomDream = (dreams) =>
+  dreams[Math.floor(Math.random() * dreams.length)];
 
-const sleep = (ms, cb) => setTimeout(cb, ms);
+const sleep = (ms) => new Promise(res => setTimeout(res, ms));
 
-const dorminhoco = async (milliseconds, dreamList) => {
-  const promisedDream = new Promise((resolve) =>
-    sleep(milliseconds, randomDream(dreamList, resolve))
-  );
-  const dream = await promisedDream;
+export const dorminhoco = async (milliseconds, dreamList) => {
+
+  await sleep(milliseconds)
+
+  const dream = randomDream(dreamList);
   return dream;
 };
-
-module.exports = { dorminhoco };

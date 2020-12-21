@@ -1,26 +1,28 @@
-const main = require('./main');
+import { dorminhoco } from './main';
+const dreamMock = ['não lembro do sonho'];
 
 describe('Testes - Dominhoco', () => {
   afterEach(() => {
     jest.clearAllMocks();
     jest.useFakeTimers();
   });
-  const dreamMock = ['não lembro do sonho'];
 
   it(`resultado deve ser uma string`, async () => {
-    const dream = await main.dorminhoco(42, dreamMock);
+    const dream = await dorminhoco(42, dreamMock);
     expect(typeof dream).toBe('string');
     expect(dream).toBe(dreamMock[0]);
   });
 
-  it(`setTimeout dever ser sido chamado uma vez`, async () => {
-    main.dorminhoco(42, dreamMock);
-
-    expect(setTimeout).toBeCalledTimes(1);
-  });
   it(`espera que setTimeout seja chamado com uma função`, async () => {
-    main.dorminhoco(42, dreamMock);
-
+    dorminhoco(42, dreamMock);
+    expect(setTimeout).toBeCalledTimes(1);
     expect(setTimeout).toBeCalledWith(expect.any(Function), 42);
+  });
+
+  it(`checa se sonho tem retorno válido`, async () => {
+    const dream = dorminhoco(42, dreamMock);
+
+    expect(dream).not.toBe([])
+    expect(!dream).toBe(false)
   });
 });
