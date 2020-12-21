@@ -22,7 +22,7 @@ describe('Testes - Dominhoco', () => {
   it(`checa se sonho tem retorno válido`, async () => {
     const dream = dorminhoco(42, dreamMock);
 
-    expect(dream).not.toBe([])
+    expect(dream).not.toEqual([])
     expect(!dream).toBe(false)
   });
 });
