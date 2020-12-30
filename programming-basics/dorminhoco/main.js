@@ -8,7 +8,7 @@ const dreamList = [
 const randomDream = (dreams) =>
   dreams[Math.floor(Math.random() * dreams.length)];
 
-const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const dorminhoco = async (milliseconds, dreamList) => {
 
