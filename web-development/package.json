@@ -4,7 +4,8 @@
   "description": "Exercícios da PodCodar",
   "main": "README.md",
   "scripts": {
-    "test": "jest $INIT_CWD/test.ts",
+    "test:lin": "jest $INIT_CWD/test.js",
+    "test:win": "jest --findRelatedTests",
     "test:all": "jest"
   },
   "repository": {
