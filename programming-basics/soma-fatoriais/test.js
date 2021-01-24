@@ -1,3 +1,4 @@
+
 import somaFatoriais from './main.js'
 
 describe("Testes - Soma Fatoriais", () => {

@@ -10,7 +10,7 @@ Logo, sua função deverá retornar:
 
 Exemplo:
 
-O fatorial de um número inteiro e positivo “n”, representado por “n!” é obtido a partir da multiplicação de todos os seus antecessores até o número um, cuja expressão genérica é n! = n . (n – 1). (n – 2). (n – 3) ... 2,1. 
+O fatorial de um número inteiro e positivo “n”, representado por “n!” é obtido a partir da multiplicação de todos os seus antecessores até o número um, cuja expressão genérica é n! = n . (n – 1). (n – 2). (n – 3) ... 2,1
 
 Portanto, fatorial de 2 corresponde a 2! (lê-se 2 fatorial), sendo assim 2! = 2 . 1 = 2.
 
