@@ -2,7 +2,7 @@
 
 Neste exercício é necessário calcular o [fatorial](https://pt.wikipedia.org/wiki/Fatorial) de dois números inteiros  M (0 ≤ M ≤ 20) e N (0 ≤ N ≤ 20) e retornar a soma desses dois fatoriais.
 
-Leia dois valores inteiros M e N indefinidamente. A cada leitura, calcule e escreva a soma dos fatoriais de cada um dos valores lidos. Utilize uma variável apropriada, pois cálculo pode resultar em um valor com mais de 15 dígitos.
+Leia dois valores inteiros M e N indefinidamente. O seu programa deverá retornar o cálculo da soma dos fatoriais.
 
 Logo, sua função deverá retornar:
 
