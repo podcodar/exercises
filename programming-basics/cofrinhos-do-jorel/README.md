@@ -2,9 +2,9 @@
 
 ## Parte 1 - Problema Base
 
-Jorei está muito feliz após ser contratado pelo banco Caixote como desenvolvedor! Como sua primeira tarefa Jorel deve desenvolver o primeiro caixa eletrônico do banco Caixote, trazendo a revolução digital para os clientes de sua única agência.
+Jorei está muito feliz após ser contratado pelo banco Caixote como desenvolvedor! Como sua primeira tarefa Jorei deve desenvolver o primeiro caixa eletrônico do banco Caixote, trazendo a revolução digital para os clientes de sua única agência.
 
-Inicialmente o caixa ficará ligado 24 horas por dia, logo todos os dados podem ficar apenas na memória do caixa eletrônico! Bem vamos ao levantamento de requisitos que o gerente Marquinhos preparou para sua primeira tarefa:
+Inicialmente o caixa ficará ligado 24 horas por dia, logo todos os dados podem ficar apenas na memória do caixa eletrônico! Bem vamos ao levantamento de requisitos que o gerente Marquinhos :bowtie: preparou para sua primeira tarefa:
 
 - Todos os clientes do banco são os únicos de seu nome, logo o caixa deverá pergunta apenas o `PrimeiroNome` e o `Valor` a ser retirado ou colocado em sua conta.
 - Apenas clientes do banco podem usar nossas agências, logo não é necessário senhas ou verificações. Se um usuário ainda não existir em memória o mesmo deve ser criado pelo sistema.
@@ -26,8 +26,7 @@ Para cada uma das operações o caixa eletrônico deverá retornar uma resposta 
 - Retorna a string `Nao foi possivel criar a conta` caso o cliente não exista o depósito incial for menor que R$5,00 e o depósito inicial é maior ou igual a 0.
 - Retorna a string `Conta nao existente` caso um cliente não existente tente sacar dinheiro
 
-Pense para este exercício que o caixa foi acumulando as operações durante um longo dia e apenas ao fim do dia seu programa irá ler as operações e processar as respostas, retornando no fim do dia, qual o status atual dos cofres
-(o gerente Marquinhos nunca conheceu outra agência de banco e achou a idéia estupenda!).
+Pense para este exercício que o caixa foi acumulando as operações durante um longo dia e apenas ao fim do dia seu programa irá ler as operações e processar as respostas, retornando no fim do dia, qual o status atual dos cofres (o gerente Marquinhos nunca conheceu outra agência de banco e achou a idéia estupenda!).
 
 ```javascript
 // O retorno da sua função deve obedecer este padrao
@@ -127,6 +126,19 @@ caixaEletronico = (listaDeOperacoes1, true);
 caixaEletronico = (listaDeOperacoes2, true);
 ```
 
+> :exclamation::exclamation::exclamation: Para salvar seus dados crie um arquivo com o nome `persist.txt`, Isto é muito importante para que os testes funcionem corretamente!
+>
+> Para fazer corretamente a persistencia, sugerimos o uso da seguinte biblioteca e seus métodos:
+>
+> - [NodeJs FileSystem](https://nodejs.org/api/fs.html)
+>   - fs.writeFileSync (Escreve texto em um arquivo)
+>   - fs.readFileSync (Lê textos de um arquivo)
+>   - fs.exists (verificar se o arquivo existe)
+>
+> - [JSON](https://www.json.org/json-en.html)
+>   - JSON.parse (Lê uma JSON string e retorna um objeto )
+>   - JSON.stringify (Recebe um objeto e retorna uma JSON string)
+
 O banco final deve ser:
 
 ```javascript
@@ -134,6 +146,8 @@ O banco final deve ser:
 const bancoFinal = {
     'jorjinho': 60
 }
+// Perceba que sem a persistencia, após a segunda execução
+// o código retornaria {'jorjinho': 30}
 ```
 
-Para este exercício será avaliado o resultado ao final de N execuções da sua função, porém todo o log será levado em conta.
+Para este exercício será avaliado o resultado ao final de N execuções da sua função, bem como todo o log da execução em ordem.
