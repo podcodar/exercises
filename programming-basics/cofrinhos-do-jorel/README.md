@@ -1,8 +1,8 @@
-# Cofrinhos do Jorel
+# Cofrinhos de Jorei
 
 ## Parte 1 - Problema Base
 
-Jorel está muito feliz após ser contratado pelo banco Caixote como desenvolvedor! Como sua primeira tarefa Jorel deve desenvolver o primeiro caixa eletrônico do banco Caixote, trazendo a revolução digital para os clientes de sua única agência.
+Jorei está muito feliz após ser contratado pelo banco Caixote como desenvolvedor! Como sua primeira tarefa Jorel deve desenvolver o primeiro caixa eletrônico do banco Caixote, trazendo a revolução digital para os clientes de sua única agência.
 
 Inicialmente o caixa ficará ligado 24 horas por dia, logo todos os dados podem ficar apenas na memória do caixa eletrônico! Bem vamos ao levantamento de requisitos que o gerente Marquinhos preparou para sua primeira tarefa:
 
@@ -11,15 +11,11 @@ Inicialmente o caixa ficará ligado 24 horas por dia, logo todos os dados podem 
 - Um cliente pode apenas retirar pelo caixa eletrônico o dinheiro que tem, não podendo **NUNCA!!!** deixar sua conta com menos de R$5,00.
 - Para retirar dinheiro da conta o cliente irá inserir um valor negativo, como `-30`. Para adicionar ele deve apenas digitar o valor normalmente como: `30`.
 
-### Entrada
+### Formato de entrada
 
 O caixa irá receber diversas operações através da `listaDeOperacoes`. Cada elemento da lista será um `Objeto` tendo como chave o `PrimeiroNome` do cliente e associado a esta chave o `Valor` que o cliente deseja depositar ou retirar.
 
-```javascript
-[{'benedito': '30'}, {'marquinhos': '50'}, {'bruninho': '25'}]
-```
-
-### Saída
+### Resultado esperado
 
 Para cada uma das operações o caixa eletrônico deverá retornar uma resposta condizente, dentro dos seguintes termos:
 
@@ -27,24 +23,33 @@ Para cada uma das operações o caixa eletrônico deverá retornar uma resposta 
 - Retorna a string `Saque realizado com sucesso` quando um cliente sacar um valor válido de sua conta.
 - Retorna a string `Saldo insuficiente` caso o cliente fique com menos de R$5,00 em sua conta após a operação.
 - Retorna a string `Novo cliente criado! Saldo $` sendo `$` o saldo adicionado a conta do cliente.
-- Retorna a string `Nao foi possivel criar a conta` caso o cliente não exista e o depósito incial for menor que R$5,00.
+- Retorna a string `Nao foi possivel criar a conta` caso o cliente não exista o depósito incial for menor que R$5,00 e o depósito inicial é maior ou igual a 0.
 - Retorna a string `Conta nao existente` caso um cliente não existente tente sacar dinheiro
 
-Pense para este exercício que o caixa foi acumulando as operações durante um longo dia e apenas ao fim do dia seu programa irá ler as operações e processar as respostas, retornando uma lista na mesma ordem das operações porém contendo as mensagens finais a serem entregues aos usuários no outro dia (o gerente Marquinhos nunca conheceu outra agência de banco e achou a idéia estupenda!).
+Pense para este exercício que o caixa foi acumulando as operações durante um longo dia e apenas ao fim do dia seu programa irá ler as operações e processar as respostas, retornando no fim do dia, qual o status atual dos cofres
+(o gerente Marquinhos nunca conheceu outra agência de banco e achou a idéia estupenda!).
 
 ```javascript
-["Novo cliente criado! Saldo 30","Novo cliente criado! Saldo 50","Novo cliente criado! Saldo 25"]
+// O retorno da sua função deve obedecer este padrao
+const banco = {
+    "benedito": 30,
+    "marquinhos": 50,
+    "bruninho": 25
+}
 ```
 
 ---
 
 ### Um exemplo um pouco mais detalhado
 
-Entrada (oque seu programa irá receber como `listaDeOperacoes`  na funcao `caixaEletronico`):
+#### Entrada
+
+Para cada caso de teste será invocada a função `caixaEletronico` implementada por você (não altere o template da chamada).
+Será dado como parâmetro para sua função uma lista de operações no seguinte formato:
 
 ```javascript
-[
-    {'benedito': '30'},
+const listaDeOperacoes = [
+    {'jorjinho': '30'},
     {'marquinhos': '-50'},
     {'bruninho': '25'},
     {'bruninho': '-20'},
@@ -54,10 +59,21 @@ Entrada (oque seu programa irá receber como `listaDeOperacoes`  na funcao `caix
 ]
 ```
 
-Saída (oque seu programa deve retornar na funcao `caixaEletronico`):
+#### Saída
+
+Para cada caso de teste, você será avaliado em duas frentes:
+
+- Se o programa enviou os logs esperados:
+  - Mensagens condizentes com a operação desejada
+  - Ordem correta das mensagens
+- O estado final do banco, ou seja, que após todas as operações seja possível ver o saldo atual de todos os clientes.  
 
 ```javascript
-[
+// Oque sua função deve retornar
+bancoFinal = {"jorjinho": 30,"bruninho": 5,"benedito": 15}
+
+// Oque seu código deve logar em ordem
+logsEnviados = [
     "Novo cliente criado! Saldo 30",
     "Conta nao existente",
     "Novo cliente criado! Saldo 25",
@@ -68,9 +84,8 @@ Saída (oque seu programa deve retornar na funcao `caixaEletronico`):
 ]
 ```
 
-Neste problema separamos já duas funções para te auxiliar, a função principal `caixaEletronico` vai receber as operações do dia a serem processadas, a `processaOperacao` foi criada para te auxiliar a separar seu código e pensada para receber o `Nome` e o `Valor` e assim definir qual mensagem deve ser retornada para aquela operação.
-
-> Sinta-se a vontade para alterar os parâmetros da funcao `processaOperacao`, porém a função `caixaEletronico` não deve ter seus parâmetros alterados.
+> É **MUITO IMPORTANTE** utilizar apenas o `console.log` neste exercício. Logo para toda situação descrita acima
+o programa deve logar a resposta condizente.
 
 ---
 
@@ -82,9 +97,43 @@ Você deve melhorar o seu programa anterior para salvar os dados dos clientes de
 
 Para isto podemos armazenar os dados no `HD` do nosso computador como um arquivo! Você consegue completar este desafio? Vamos deixar aqui algumas referências.
 
-- https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file
-- https://pt.stackoverflow.com/questions/342502/como-criar-um-arquivo-json-a-partir-de-um-js (segunda resposta)
+- [Referência inglês](https://stackoverflow.com/questions/34156282/how-do-i-save-json-to-local-text-file).
+- [Referência português](https://pt.stackoverflow.com/questions/342502/como-criar-um-arquivo-json-a-partir-de-um-js).
 
 Você vai perceber que `funciona!!!`, você pode por exemplo desligar e ligar o computador e os dados do cliente vão continuar salvos no seu computador!.
 
-> Este exercício continua.
+Para ajudar nos testes vamos primeiro fazer uma pequena modificação, vamos adicionar uma nova opção a função `caixaEletronico`:
+
+```javascript
+// Altere a chamada da sua funcao no ./main.js para este formato
+const caixaEletronico = (listaDeOperacoes, persistir) => {
+    // ...
+}
+```
+
+Pense que persistir é um `booleano` ou seja podemos escolher ou não salvar e fazer o load dos dados depois, por exemplo,
+se tivermos 2 exemplos simples de entrada:
+
+```javascript
+const listaDeOperacoes1 = [
+    {'jorjinho':  30}
+]
+
+const listaDeOperacoes2 = [
+    {'jorjinho': 30}
+]
+
+caixaEletronico = (listaDeOperacoes1, true);
+caixaEletronico = (listaDeOperacoes2, true);
+```
+
+O banco final deve ser:
+
+```javascript
+// Ao final da execucao este deve ser o valor do banco
+const bancoFinal = {
+    'jorjinho': 60
+}
+```
+
+Para este exercício será avaliado o resultado ao final de N execuções da sua função, porém todo o log será levado em conta.
