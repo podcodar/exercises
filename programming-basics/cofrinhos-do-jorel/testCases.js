@@ -1,6 +1,6 @@
 const testCases = {
-    "testeUm": {
-        "listaDeOperacoes":  [
+    "testOperations": {
+        "operations":  [
             {'jorjinho': 30},
             {'marquinhos': -50},
             {'bruninho': 25},
@@ -9,7 +9,7 @@ const testCases = {
             {'benedito': -15},
             {'bruninho': -3},
         ],
-        "logsResultado": [
+        "resultLogs": [
             ["Novo cliente criado! Saldo 30"],
             ["Conta nao existente"],
             ["Novo cliente criado! Saldo 25"],
@@ -18,14 +18,14 @@ const testCases = {
             ["Saldo insuficiente"],
             ["Saldo insuficiente"],
         ],
-        "bancoResultado": {
+        "resultBank": {
             "jorjinho":30,
             "bruninho":5,
             "benedito":15,
         },
     },
-    "testeDois": {
-        "listaDeOperacoes":  [
+    "testParsing": {
+        "operations":  [
             {'mari': 30},
             {'marqUInhos': 50},
             {'brunInho': -5},
@@ -37,7 +37,7 @@ const testCases = {
             {'mari': -3},
             
         ],
-        "logsResultado": [
+        "resultLogs": [
             ["Novo cliente criado! Saldo 30"],
             ["Novo cliente criado! Saldo 50"],
             ["Conta nao existente"],
@@ -48,7 +48,7 @@ const testCases = {
             ["Depositado"],
             ["Saque realizado com sucesso"],
         ],
-        "bancoResultado": {
+        "resultBank": {
             "marquinhos": 50,
             "bruninho": 20,
             "mari": 12,
@@ -56,21 +56,21 @@ const testCases = {
     },
 }
 
-const testCasesPersistencia = {
-    "testeUm": {
-        listaDeOperacoes1: [
+const persistenceTestCases = {
+    "testPersistence": {
+        firstDayOperations: [
             {'jorjinho': 30},
             {'marquinhos': -50},
             {'bruninho': 25},
             {'marquinhos': 50},
         ],
-        listaDeOperacoes2: [
+        secondDayOperations: [
             {'jorjinho': -10},
             {'marquinhos': 50},
             {'bruninho': -25},
             {'marquinhos': -50},
         ],
-        logsResultado: [
+        resultLogs: [
             ["Novo cliente criado! Saldo 30"],
             ["Conta nao existente"],
             ["Novo cliente criado! Saldo 25"],
@@ -80,11 +80,11 @@ const testCasesPersistencia = {
             ["Saldo insuficiente"],
             ["Saque realizado com sucesso"],
         ],
-        bancoResultado: {
+        resultBank: {
             'jorjinho': 20,
             'marquinhos': 50,
             'bruninho': 25,
         },
     }
 }
-export {testCases, testCasesPersistencia};
+export {testCases, persistenceTestCases};

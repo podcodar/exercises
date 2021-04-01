@@ -1,5 +1,5 @@
 import caixaEletronico from "./main";
-import { testCases, testCasesPersistencia } from "./testCases";
+import { testCases, persistenceTestCases } from "./testCases";
 import fs  from 'fs';
 
 describe("Testes - Cofrinhos do Jorel", () => {
@@ -11,18 +11,18 @@ describe("Testes - Cofrinhos do Jorel", () => {
   });
 
   it(`Avalia as operações base esperadas`, () => {
-    const { listaDeOperacoes, bancoResultado, logsResultado } = testCases.testeUm
+    const { operations, resultLogs, resultBank } = testCases.testOperations
 
-    expect(caixaEletronico(listaDeOperacoes)).toStrictEqual(bancoResultado);
-    expect(spy.mock.calls).toEqual(logsResultado);
+    expect(caixaEletronico(operations)).toStrictEqual(resultBank);
+    expect(spy.mock.calls).toEqual(resultLogs);
   });
 
 
   it(`Avalia tratamento para a entrada dos nomes`, () => {
-    const { listaDeOperacoes, bancoResultado, logsResultado } = testCases.testeDois;
+    const { operations, resultLogs, resultBank } = testCases.testParsing;
 
-    expect(caixaEletronico(listaDeOperacoes)).toStrictEqual(bancoResultado);
-    expect(spy.mock.calls).toEqual(logsResultado);
+    expect(caixaEletronico(operations)).toStrictEqual(resultBank);
+    expect(spy.mock.calls).toEqual(resultLogs);
   });
 });
 
@@ -39,12 +39,12 @@ describe("Testes - Cofrinhos do Jorel - Persistencia", () => {
   })
 
   it(`Avalia persistencia`, () => {
-    const { listaDeOperacoes1, listaDeOperacoes2, logsResultado, bancoResultado  } = testCasesPersistencia.testeUm;
+    const { firstDayOperations, secondDayOperations, resultLogs, resultBank  } = persistenceTestCases.testPersistence;
 
-    caixaEletronico(listaDeOperacoes1, true);
+    caixaEletronico(firstDayOperations, true);
     
 
-    expect(caixaEletronico(listaDeOperacoes2, true)).toEqual(bancoResultado);
-    expect(spyLog.mock.calls).toEqual(logsResultado);
+    expect(caixaEletronico(secondDayOperations, true)).toEqual(resultBank);
+    expect(spyLog.mock.calls).toEqual(resultLogs);
   });
 });
