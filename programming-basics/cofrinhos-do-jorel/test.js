@@ -39,7 +39,12 @@ describe("Testes - Cofrinhos do Jorel - Persistencia", () => {
   })
 
   it(`Avalia persistencia`, () => {
-    const { firstDayOperations, secondDayOperations, resultLogs, resultBank  } = persistenceTestCases.testPersistence;
+    const { 
+      firstDayOperations, 
+      secondDayOperations, 
+      resultLogs, 
+      resultBank  
+    } = persistenceTestCases.testPersistence;
 
     caixaEletronico(firstDayOperations, true);
     
