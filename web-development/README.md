@@ -23,11 +23,13 @@ Pronto! 😁
 Para rodar os testes de um exercício você precisa:
 
 - **Sistemas Linux**
-    - acessar a pasta do exercício
-    - rodar `npm run test:lin` dentro da pasta do exercício
+
+  - acessar a pasta do exercício
+  - rodar `npm run test:lin` dentro da pasta do exercício
 
 - **Sistemas Windows PowerShell**
-    - acessar a pasta do exercício
-    - rodar `npm run test:win -- $pwd/tests.js` dentro da pasta do exercício
+
+  - acessar a pasta do exercício
+  - rodar `npm run test:win -- $pwd/test.ts` dentro da pasta do exercício
 
 Voce pode utilizar também o comando `npm test:all` nesta pasta (`exercicios/web-development/`), isto vai executar todos os testes de todos os exercícios desta lista!
