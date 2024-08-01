@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Import Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Jogo de Adivinha</title>
+  </head>
+  <body>
+    <div class="container ">
+      <h1 class="title">Jogo de Adivinha</h1>
+
+      <div class="input-group game-input">
+
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Chute um número de 0 a 100..."
+          max="100"
+          min="0"
+          onchange="handleClick()"
+        />
+
+        <div class="input-group-append">
+          <button onclick="handleClick()" class="btn btn-primary"> Vai! </button>
+        </div>
+
+      </div>
+
+      <div id="success" class="alert alert-success">
+        <p>Parabéns, voce acertou! 👏👏</p>
+        <button onclick="handleResetGame()" class="btn btn-secondary"> Jogar Novamente </button>
+
+      </div>
+
+      <div id="greater" class="alert alert-warning">
+        O número é <b>maior</b> 👆
+      </div>
+
+      <div id="lower" class="alert alert-info">
+        O número é <b>menor</b> 👇
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

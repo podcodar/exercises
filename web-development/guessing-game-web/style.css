@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+  margin: 2rem;
+}
+
+.game-input {
+  margin: 1rem auto;
+}
+
+#success,
+#greater,
+#lower {
+  display: none;
+}
