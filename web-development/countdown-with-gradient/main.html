@@ -1,0 +1,93 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <body style="text-align: center;">
+        <h1 style="text-align: center;margin-top: 40px; margin-bottom: 20px;">
+            Contagem regressiva!
+        </h1>
+        <div id="initial-screen" class="visible">
+            <div>
+                <label for="text">Tempo:</label>
+                <input type="text" name="time">
+                <button type="button" name="start">Inicar</button>
+            </div>    
+        </div>
+        <div id="countdown-screen" class="d-none">
+            <img src="https://thumbs.gfycat.com/SelfreliantClutteredBlackpanther-max-1mb.gif">
+            <div id="remaining-time"></div>        
+        </div>
+        <div id="final-screen" class="d-none">
+            <img src="https://thumbs.gfycat.com/DifferentDimpledHamster-max-1mb.gif">
+            <div>
+                <button type="button" name="reset" style="margin-top: 5px;">Resetar</button>
+            </div>
+        </div>
+    </body>
+    <script>        
+        var shouldRun = false;
+        function start() {
+            const totalTime = parseInt(document.getElementsByName("time")[0].value);
+            shouldRun = true;
+            if (!totalTime) {
+                alert("Valor de tempo inválido");
+                return;
+            }
+            var elapsedTime = 0;
+            const update = () => {
+                if (!shouldRun) {
+                    return;
+                }
+                setScreen('countdown-screen');
+                const remainingTime = Math.max(totalTime - elapsedTime, 0);
+                const nonRedValue = Math.ceil(255 * remainingTime / totalTime);
+                document.body.style.background = `rgb(${nonRedValue}, 255, ${nonRedValue})`;
+                if (remainingTime > 0) {
+                    const displayText = remainingTime == 1 ? "Falta 1 segundo" : `Faltam ${remainingTime} segundos`;
+                    document.getElementById("remaining-time").innerHTML = displayText;
+                    elapsedTime++;
+                    setTimeout(update.bind(this), 1000);
+                } else {
+                    setScreen('final-screen');
+                    document.getElementById("remaining-time").innerHTML = "Fim!";
+                }
+            }
+            update();
+        }
+
+        function reset() {
+            shouldRun = false;
+            document.getElementById("remaining-time").innerHTML = "";
+            document.body.style.background = "rgb(255, 255, 255)";
+            document.getElementsByName("time")[0].value = "";
+            setScreen('initial-screen');
+        }
+        
+        const screenIds = ['initial-screen', 'countdown-screen', 'final-screen'];
+        function setScreen(screenId) {
+            if (screenIds.indexOf(screenId) == -1) {
+                return;
+            }
+            for (i = 0; i < screenIds.length; i++) {
+                const currentScreenId = screenIds[i];
+                if (currentScreenId == screenId) {
+                    setVisible(currentScreenId);
+                } else {
+                    setInvisible(currentScreenId);
+                }
+            }
+        }
+
+        function setVisible(elementId) {
+            document.getElementById(elementId).className = "";
+        }
+
+        function setInvisible(elementId) {
+            document.getElementById(elementId).className = "d-none";
+        }
+
+        window.onload = function () {
+            document.getElementsByName("start")[0].onclick = start;
+            document.getElementsByName("reset")[0].onclick = reset;
+
+        }
+    </script>
+</html>
